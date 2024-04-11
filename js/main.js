@@ -99,3 +99,49 @@ function planificarProduccion() {
 
 // Llamar a la función para planificar la producción
 planificarProduccion();
+
+// Función para encontrar y mostrar los productos del formato 1
+function mostrarFormatoUno(productos) {
+    const formatoUno = productos.filter(function(producto) {
+        return producto.formato === 1;
+    });
+
+    console.log("Productos del formato 1:");
+    formatoUno.forEach(function(producto) {
+        console.log(producto.nombre);
+    });
+}
+
+// Llamar a la función para mostrar los productos del formato 1
+mostrarFormatoUno(productos);
+
+// Función para encontrar y mostrar los productos del formato 2
+function mostrarFormatoDos(productos) {
+    const formatoDos = productos.filter(function(producto) {
+        return producto.formato === 2;
+    });
+
+    console.log("Productos del formato 2:");
+    formatoDos.forEach(function(producto) {
+        console.log(producto.nombre);
+    });
+}
+
+// Llamar a la función para mostrar los productos del formato 2
+mostrarFormatoDos(productos);
+
+// Función para encontrar y mostrar los productos del formato 3
+function mostrarFormatoTres(productos) {
+    const formatoTres = productos.filter(function(producto) {
+        return producto.formato === 3;
+    });
+
+    console.log("Productos del formato 3:");
+    formatoTres.forEach(function(producto) {
+        console.log(producto.nombre);
+    });
+}
+
+// Llamar a la función para mostrar los productos del formato 3
+mostrarFormatoTres(productos);
+
