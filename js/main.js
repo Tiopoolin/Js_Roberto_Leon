@@ -1,44 +1,63 @@
 // Definir la estructura de un objeto para representar un producto
-function Producto(nombre, formato, tipo, receta) {
-    this.nombre = nombre;
-    this.formato = formato;
-    this.tipo = tipo;
-    this.receta = receta;
-}
+// function Producto(nombre, formato, tipo, receta) {
+//     this.nombre = nombre;
+//     this.formato = formato;
+//     this.tipo = tipo;
+//     this.receta = receta;
+// }
 
 // Crear una lista de productos
 const productos = [
-    new Producto("Ketchup Kraft 650 gr", 2, "Ketchup", 32),
-    new Producto("Ketchup Kraft 850 gr", 2, "Ketchup", 32),
-    new Producto("Ketchup Kraft 450 gr", 1, "Ketchup", 32),
-    new Producto("Ketchup Kraft 250 gr", 1, "Ketchup", 32),
-    new Producto("Ketchup Kraft 1000 gr", 3, "Ketchup", 32),
-    new Producto("Ketchup acuenta 650 gr", 2, "Ketchup", "acuenta"),
-    new Producto("Ketchup acuenta 850 gr", 2, "Ketchup", "acuenta"),
-    new Producto("Ketchup acuenta 450 gr", 1, "Ketchup", "acuenta"),
-    new Producto("Ketchup acuenta 250 gr", 1, "Ketchup", "acuenta"),
-    new Producto("Ketchup acuenta 1000 gr", 3, "Ketchup", "acuenta"),
-    new Producto("Ketchup Don Juan 650 gr", 2, "Ketchup", 30.5),
-    new Producto("Ketchup Don Juan 850 gr", 2, "Ketchup", 30.5),
-    new Producto("Ketchup Don Juan 450 gr", 1, "Ketchup", 30.5),
-    new Producto("Ketchup Don Juan 250 gr", 1, "Ketchup", 30.5),
-    new Producto("Ketchup Don Juan 1000 gr", 3, "Ketchup", 30.5),
-    new Producto("Mayonesa Kraft 650 gr", 2, "Mayonesa", 15),
-    new Producto("Mayonesa Kraft 850 gr", 2, "Mayonesa", 15),
-    new Producto("Mayonesa Kraft 450 gr", 1, "Mayonesa", 15),
-    new Producto("Mayonesa Kraft 250 gr", 1, "Mayonesa", 15),
-    new Producto("Mayonesa Kraft 1000 gr", 3, "Mayonesa", 15),
-    new Producto("Mayonesa acuenta 650 gr", 2, "Mayonesa", 19),
-    new Producto("Mayonesa acuenta 850 gr", 2, "Mayonesa", 19),
-    new Producto("Mayonesa acuenta 450 gr", 1, "Mayonesa", 19),
-    new Producto("Mayonesa acuenta 250 gr", 1, "Mayonesa", 19),
-    new Producto("Mayonesa acuenta 1000 gr", 3, "Mayonesa", 19),
-    new Producto("Mayonesa Don Juan 650 gr", 2, "Mayonesa", 41),
-    new Producto("Mayonesa Don Juan 850 gr", 2, "Mayonesa", 41),
-    new Producto("Mayonesa Don Juan 450 gr", 1, "Mayonesa", 41),
-    new Producto("Mayonesa Don Juan 250 gr", 1, "Mayonesa", 41),
-    new Producto("Mayonesa Don Juan 1000 gr", 3, "Mayonesa", 41)
+    { nombre: "Ketchup Kraft 650 gr", formato: 2, tipo: "Ketchup", receta: 32 },
+    { nombre: "Ketchup Kraft 850 gr", formato: 2, tipo: "Ketchup", receta: 32 },
+    { nombre: "Ketchup Kraft 450 gr", formato: 1, tipo: "Ketchup", receta: 32 },
+    { nombre: "Ketchup Kraft 250 gr", formato: 1, tipo: "Ketchup", receta: 32 },
+    { nombre: "Ketchup Kraft 1000 gr", formato: 3, tipo: "Ketchup", receta: 32 },
+    { nombre: "Ketchup acuenta 650 gr", formato: 2, tipo: "Ketchup", receta: "acuenta" },
+    { nombre: "Ketchup acuenta 850 gr", formato: 2, tipo: "Ketchup", receta: "acuenta" },
+    { nombre: "Ketchup acuenta 450 gr", formato: 1, tipo: "Ketchup", receta: "acuenta" },
+    { nombre: "Ketchup acuenta 250 gr", formato: 1, tipo: "Ketchup", receta: "acuenta" },
+    { nombre: "Ketchup acuenta 1000 gr", formato: 3, tipo: "Ketchup", receta: "acuenta" },
+    { nombre: "Don Juan 650 gr", formato: 2, tipo: "Ketchup", receta: 30.5 },
+    { nombre: "Don Juan 850 gr", formato: 2, tipo: "Ketchup", receta: 30.5 },
+    { nombre: "Don Juan 450 gr", formato: 1, tipo: "Ketchup", receta: 30.5 },
+    { nombre: "Don Juan 250 gr", formato: 1, tipo: "Ketchup", receta: 30.5 },
+    { nombre: "Don Juan 1000 gr", formato: 3, tipo: "Ketchup", receta: 30.5 },
+    { nombre: "Mayonesa Kraft 650 gr", formato: 2, tipo: "Mayonesa", receta: 15 },
+    { nombre: "Mayonesa Kraft 850 gr", formato: 2, tipo: "Mayonesa", receta: 15 },
+    { nombre: "Mayonesa Kraft 450 gr", formato: 1, tipo: "Mayonesa", receta: 15 },
+    { nombre: "Mayonesa Kraft 250 gr", formato: 1, tipo: "Mayonesa", receta: 15 },
+    { nombre: "Mayonesa Kraft 1000 gr", formato: 3, tipo: "Mayonesa", receta: 15 },
+    { nombre: "Mayonesa acuenta 650 gr", formato: 2, tipo: "Mayonesa", receta: 19 },
+    { nombre: "Mayonesa acuenta 850 gr", formato: 2, tipo: "Mayonesa", receta: 19 },
+    { nombre: "Mayonesa acuenta 450 gr", formato: 1, tipo: "Mayonesa", receta: 19 },
+    { nombre: "Mayonesa acuenta 250 gr", formato: 1, tipo: "Mayonesa", receta: 19 },
+    { nombre: "Mayonesa acuenta 1000 gr", formato: 3, tipo: "Mayonesa", receta: 19 },
+    { nombre: "Mayonesa Don Juan 650 gr", formato: 2, tipo: "Mayonesa", receta: 41 },
+    { nombre: "Mayonesa Don Juan 850 gr", formato: 2, tipo: "Mayonesa", receta: 41 },
+    { nombre: "Mayonesa Don Juan 450 gr", formato: 1, tipo: "Mayonesa", receta: 41 },
+    { nombre: "Mayonesa Don Juan 250 gr", formato: 1, tipo: "Mayonesa", receta: 41 },
+    { nombre: "Mayonesa Don Juan 1000 gr", formato: 3, tipo: "Mayonesa", receta: 41 }
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Mostrar el listado de productos en la consola
