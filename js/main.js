@@ -8,40 +8,56 @@
 
 // Crear una lista de productos
 const productos = [
-    { nombre: "Ketchup Kraft 650 gr", formato: 2, tipo: "Ketchup", receta: 32 },
-    { nombre: "Ketchup Kraft 850 gr", formato: 2, tipo: "Ketchup", receta: 32 },
-    { nombre: "Ketchup Kraft 450 gr", formato: 1, tipo: "Ketchup", receta: 32 },
-    { nombre: "Ketchup Kraft 250 gr", formato: 1, tipo: "Ketchup", receta: 32 },
-    { nombre: "Ketchup Kraft 1000 gr", formato: 3, tipo: "Ketchup", receta: 32 },
-    { nombre: "Ketchup acuenta 650 gr", formato: 2, tipo: "Ketchup", receta: "acuenta" },
-    { nombre: "Ketchup acuenta 850 gr", formato: 2, tipo: "Ketchup", receta: "acuenta" },
-    { nombre: "Ketchup acuenta 450 gr", formato: 1, tipo: "Ketchup", receta: "acuenta" },
-    { nombre: "Ketchup acuenta 250 gr", formato: 1, tipo: "Ketchup", receta: "acuenta" },
-    { nombre: "Ketchup acuenta 1000 gr", formato: 3, tipo: "Ketchup", receta: "acuenta" },
-    { nombre: "Don Juan 650 gr", formato: 2, tipo: "Ketchup", receta: 30.5 },
-    { nombre: "Don Juan 850 gr", formato: 2, tipo: "Ketchup", receta: 30.5 },
-    { nombre: "Don Juan 450 gr", formato: 1, tipo: "Ketchup", receta: 30.5 },
-    { nombre: "Don Juan 250 gr", formato: 1, tipo: "Ketchup", receta: 30.5 },
-    { nombre: "Don Juan 1000 gr", formato: 3, tipo: "Ketchup", receta: 30.5 },
-    { nombre: "Mayonesa Kraft 650 gr", formato: 2, tipo: "Mayonesa", receta: 15 },
-    { nombre: "Mayonesa Kraft 850 gr", formato: 2, tipo: "Mayonesa", receta: 15 },
-    { nombre: "Mayonesa Kraft 450 gr", formato: 1, tipo: "Mayonesa", receta: 15 },
-    { nombre: "Mayonesa Kraft 250 gr", formato: 1, tipo: "Mayonesa", receta: 15 },
-    { nombre: "Mayonesa Kraft 1000 gr", formato: 3, tipo: "Mayonesa", receta: 15 },
-    { nombre: "Mayonesa acuenta 650 gr", formato: 2, tipo: "Mayonesa", receta: 19 },
-    { nombre: "Mayonesa acuenta 850 gr", formato: 2, tipo: "Mayonesa", receta: 19 },
-    { nombre: "Mayonesa acuenta 450 gr", formato: 1, tipo: "Mayonesa", receta: 19 },
-    { nombre: "Mayonesa acuenta 250 gr", formato: 1, tipo: "Mayonesa", receta: 19 },
-    { nombre: "Mayonesa acuenta 1000 gr", formato: 3, tipo: "Mayonesa", receta: 19 },
-    { nombre: "Mayonesa Don Juan 650 gr", formato: 2, tipo: "Mayonesa", receta: 41 },
-    { nombre: "Mayonesa Don Juan 850 gr", formato: 2, tipo: "Mayonesa", receta: 41 },
-    { nombre: "Mayonesa Don Juan 450 gr", formato: 1, tipo: "Mayonesa", receta: 41 },
-    { nombre: "Mayonesa Don Juan 250 gr", formato: 1, tipo: "Mayonesa", receta: 41 },
-    { nombre: "Mayonesa Don Juan 1000 gr", formato: 3, tipo: "Mayonesa", receta: 41 }
+    { nombre: "Ketchup Kraft 650 gr", formato: 2, tipo: "Ketchup", receta: 32, img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup Kraft 850 gr", formato: 2, tipo: "Ketchup", receta: 32, img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup Kraft 450 gr", formato: 1, tipo: "Ketchup", receta: 32, img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup Kraft 250 gr", formato: 1, tipo: "Ketchup", receta: 32, img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup Kraft 1000 gr", formato: 3, tipo: "Ketchup", receta: 32, img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup acuenta 650 gr", formato: 2, tipo: "Ketchup", receta: "acuenta", img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup acuenta 850 gr", formato: 2, tipo: "Ketchup", receta: "acuenta", img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup acuenta 450 gr", formato: 1, tipo: "Ketchup", receta: "acuenta", img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup acuenta 250 gr", formato: 1, tipo: "Ketchup", receta: "acuenta", img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup acuenta 1000 gr", formato: 3, tipo: "Ketchup", receta: "acuenta", img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup Don Juan 650 gr", formato: 2, tipo: "Ketchup", receta: 30.5, img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup Don Juan 850 gr", formato: 2, tipo: "Ketchup", receta: 30.5, img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup Don Juan 450 gr", formato: 1, tipo: "Ketchup", receta: 30.5, img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup Don Juan 250 gr", formato: 1, tipo: "Ketchup", receta: 30.5, img: "./img/ketchup.jpg" },
+    { nombre: "Ketchup Don Juan 1000 gr", formato: 3, tipo: "Ketchup", receta: 30.5, img: "./img/ketchup.jpg" },
+    { nombre: "Mayonesa Kraft 650 gr", formato: 2, tipo: "Mayonesa", receta: 15, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa Kraft 850 gr", formato: 2, tipo: "Mayonesa", receta: 15, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa Kraft 450 gr", formato: 1, tipo: "Mayonesa", receta: 15, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa Kraft 250 gr", formato: 1, tipo: "Mayonesa", receta: 15, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa Kraft 1000 gr", formato: 3, tipo: "Mayonesa", receta: 15, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa acuenta 650 gr", formato: 2, tipo: "Mayonesa", receta: 19, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa acuenta 850 gr", formato: 2, tipo: "Mayonesa", receta: 19, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa acuenta 450 gr", formato: 1, tipo: "Mayonesa", receta: 19, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa acuenta 250 gr", formato: 1, tipo: "Mayonesa", receta: 19, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa acuenta 1000 gr", formato: 3, tipo: "Mayonesa", receta: 19, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa Don Juan 650 gr", formato: 2, tipo: "Mayonesa", receta: 41, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa Don Juan 850 gr", formato: 2, tipo: "Mayonesa", receta: 41, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa Don Juan 450 gr", formato: 1, tipo: "Mayonesa", receta: 41, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa Don Juan 250 gr", formato: 1, tipo: "Mayonesa", receta: 41, img: "./img/mayonesa.webp" },
+    { nombre: "Mayonesa Don Juan 1000 gr", formato: 3, tipo: "Mayonesa", receta: 41, img: "./img/mayonesa.webp" }
 ];
 
 
+const contenedorProductos = document.querySelector("#productosTotales");
 
+
+productos.forEach((producto)=>{
+    const div = document.createElement("div");
+    // div.classList.add();
+    div.innerHTML=`
+    <img src="${producto.img}" alt="">
+    <p>${producto.nombre}</p>
+    <p>formato: ${producto.formato}</p>
+    <p>Salsa: ${producto.tipo}</p>
+    <p>Receta: ${producto.receta}</p>
+    <button>Planificar</button>
+    `;
+
+    contenedorProductos.append(div);
+})
 
 
 
@@ -62,7 +78,7 @@ const productos = [
 
 // Mostrar el listado de productos en la consola
 console.log("Listado de productos:");
-productos.forEach(function(producto) {
+productos.forEach(function (producto) {
     console.log(producto.nombre);
 });
 
@@ -99,8 +115,8 @@ function encontrarProductoEficiente(producidos) {
 // Función para planificar la producción
 function planificarProduccion() {
     const producidos = [];
-    const primerProducto = prompt("Ingresa el nombre del primer producto que se fabricará:");
-    const producto = productos.find(function(item) {
+    // const primerProducto = prompt("Ingresa el nombre del primer producto que se fabricará:");
+    const producto = productos.find(function (item) {
         return item.nombre === primerProducto;
     });
     if (!producto) {
@@ -121,12 +137,12 @@ planificarProduccion();
 
 // Función para encontrar y mostrar los productos del formato 1
 function mostrarFormatoUno(productos) {
-    const formatoUno = productos.filter(function(producto) {
+    const formatoUno = productos.filter(function (producto) {
         return producto.formato === 1;
     });
 
     console.log("Productos del formato 1:");
-    formatoUno.forEach(function(producto) {
+    formatoUno.forEach(function (producto) {
         console.log(producto.nombre);
     });
 }
@@ -136,12 +152,12 @@ mostrarFormatoUno(productos);
 
 // Función para encontrar y mostrar los productos del formato 2
 function mostrarFormatoDos(productos) {
-    const formatoDos = productos.filter(function(producto) {
+    const formatoDos = productos.filter(function (producto) {
         return producto.formato === 2;
     });
 
     console.log("Productos del formato 2:");
-    formatoDos.forEach(function(producto) {
+    formatoDos.forEach(function (producto) {
         console.log(producto.nombre);
     });
 }
@@ -151,12 +167,12 @@ mostrarFormatoDos(productos);
 
 // Función para encontrar y mostrar los productos del formato 3
 function mostrarFormatoTres(productos) {
-    const formatoTres = productos.filter(function(producto) {
+    const formatoTres = productos.filter(function (producto) {
         return producto.formato === 3;
     });
 
     console.log("Productos del formato 3:");
-    formatoTres.forEach(function(producto) {
+    formatoTres.forEach(function (producto) {
         console.log(producto.nombre);
     });
 }
