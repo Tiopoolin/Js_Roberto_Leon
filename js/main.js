@@ -1,12 +1,3 @@
-// Definir la estructura de un objeto para representar un producto
-// function Producto(nombre, formato, tipo, receta) {
-//     this.nombre = nombre;
-//     this.formato = formato;
-//     this.tipo = tipo;
-//     this.receta = receta;
-// }
-
-// Crear una lista de productos
 
 const prodPlan = [];
 
@@ -87,12 +78,88 @@ const borrarDelPlan = (producto) => {
     }
 }
 
+
+
+
+
+const calcularTiempoEspera = (producto, producidos) => {
+    let tiempo = 0;
+    producidos.forEach((prod) => {
+        if (producto.formato !== prod.formato) tiempo += 240; // 4 horas de espera si el formato es diferente
+        if (producto.tipo !== prod.tipo) tiempo += 180; // 3 horas de espera si el tipo es diferente
+        if (producto.receta !== prod.receta) tiempo += 30; // 30 minutos de espera si la receta es diferente
+    });
+    return tiempo;
+};
+
+const encontrarProductoEficiente = (prodPlan, producidos) => {
+    let mejorProducto;
+    let menorTiempo = Infinity;
+    prodPlan.forEach((producto) => {
+        if (!producidos.includes(producto)) {
+            const tiempo = calcularTiempoEspera(producto, producidos);
+            if (tiempo < menorTiempo) {
+                mejorProducto = producto;
+                menorTiempo = tiempo;
+            }
+        }
+    });
+    return mejorProducto;
+};
+
+const ordenarProductos = (producidos) => {
+    return prodPlan.sort((a, b) => {
+        let tiempoA = calcularTiempoEspera(a, producidos);
+        let tiempoB = calcularTiempoEspera(b, producidos);
+        return tiempoA - tiempoB;
+    });
+};
+
+const planificarProduccion = (primerProducto) => {
+    const producidos = [];
+    const productoInicial = prodPlan.find((item) => item.nombre === primerProducto);
+    if (!productoInicial) {
+        alert("El producto ingresado no está en la lista.");
+        return;
+    }
+    producidos.push(productoInicial);
+    console.log("Primer producto: " + productoInicial.nombre);
+    
+    // Ordenar el array de productos según la optimización solicitada
+    const productosOrdenados = ordenarProductos(producidos);
+
+    // Crear un nuevo array con los productos ordenados
+    const planificacion = [...productosOrdenados];
+
+    // Mostrar la planificación en el HTML
+    mostrarPlanificacion(planificacion);
+};
+
+const mostrarPlanificacion = (productos) => {
+    const contenedorPlanificacion = document.querySelector("#planificacion");
+    contenedorPlanificacion.innerHTML = "";
+    productos.forEach((producto) => {
+        const div = document.createElement("div");
+        div.innerHTML = `  
+        <img src="${producto.img}" alt="">
+        <p>${producto.nombre}</p>
+        <p>Formato: ${producto.formato}</p>
+        <p>Salsa: ${producto.tipo}</p>
+        <p>Receta: ${producto.receta}</p>   
+        `;
+
+        contenedorPlanificacion.appendChild(div);
+    });
+};
+
+
+
 const actualizarPlan = () => {
     contenedorPlan.innerHTML = "";
     prodPlan.forEach((producto) => {
         const div = document.createElement("div");
         div.innerHTML = `  
-        <img src="${producto.img}" alt="">
+        <img src="${producto.img}" alt="" onclick="planificarProduccion('${producto.nombre}')">
         <p>${producto.nombre}</p>
         <p>Formato: ${producto.formato}</p>
         <p>Salsa: ${producto.tipo}</p>
@@ -111,125 +178,3 @@ const actualizarPlan = () => {
         contenedorPlan.append(div);
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Mostrar el listado de productos en la consola
-console.log("Listado de productos:");
-productos.forEach(function (producto) {
-    console.log(producto.nombre);
-});
-
-
-// Función para calcular el tiempo de espera para producir un producto
-function calcularTiempoEspera(producto, producidos) {
-    let tiempo = 0;
-    for (let i = 0; i < producidos.length; i++) {
-        const prod = producidos[i];
-        if (producto.formato !== prod.formato) tiempo += 240; // 4 horas de espera si el formato es diferente
-        if (producto.tipo !== prod.tipo) tiempo += 180; // 3 horas de espera si el tipo es diferente
-        if (producto.receta !== prod.receta) tiempo += 30; // 30 minutos de espera si la receta es diferente
-    }
-    return tiempo;
-}
-
-// Función para encontrar el producto más eficiente para producir
-function encontrarProductoEficiente(producidos) {
-    let mejorProducto;
-    let menorTiempo = Infinity;
-    for (let i = 0; i < productos.length; i++) {
-        let producto = productos[i];
-        if (!producidos.includes(producto)) { // Verificar si el producto ya ha sido producido
-            let tiempo = calcularTiempoEspera(producto, producidos);
-            if (tiempo < menorTiempo) {
-                mejorProducto = producto;
-                menorTiempo = tiempo;
-            }
-        }
-    }
-    return mejorProducto;
-}
-
-// Función para planificar la producción
-function planificarProduccion() {
-    const producidos = [];
-    // const primerProducto = prompt("Ingresa el nombre del primer producto que se fabricará:");
-    const producto = productos.find(function (item) {
-        return item.nombre === primerProducto;
-    });
-    if (!producto) {
-        alert("El producto ingresado no está en la lista.");
-        return;
-    }
-    producidos.push(producto);
-    console.log("Primer producto: " + producto.nombre);
-    while (producidos.length < productos.length) {
-        const producto = encontrarProductoEficiente(producidos);
-        producidos.push(producto);
-        console.log("Siguiente producto: " + producto.nombre);
-    }
-}
-
-// Llamar a la función para planificar la producción
-planificarProduccion();
-
-// Función para encontrar y mostrar los productos del formato 1
-function mostrarFormatoUno(productos) {
-    const formatoUno = productos.filter(function (producto) {
-        return producto.formato === 1;
-    });
-
-    console.log("Productos del formato 1:");
-    formatoUno.forEach(function (producto) {
-        console.log(producto.nombre);
-    });
-}
-
-// Llamar a la función para mostrar los productos del formato 1
-mostrarFormatoUno(productos);
-
-// Función para encontrar y mostrar los productos del formato 2
-function mostrarFormatoDos(productos) {
-    const formatoDos = productos.filter(function (producto) {
-        return producto.formato === 2;
-    });
-
-    console.log("Productos del formato 2:");
-    formatoDos.forEach(function (producto) {
-        console.log(producto.nombre);
-    });
-}
-
-// Llamar a la función para mostrar los productos del formato 2
-mostrarFormatoDos(productos);
-
-// Función para encontrar y mostrar los productos del formato 3
-function mostrarFormatoTres(productos) {
-    const formatoTres = productos.filter(function (producto) {
-        return producto.formato === 3;
-    });
-
-    console.log("Productos del formato 3:");
-    formatoTres.forEach(function (producto) {
-        console.log(producto.nombre);
-    });
-}
-
-// Llamar a la función para mostrar los productos del formato 3
-mostrarFormatoTres(productos);
-
