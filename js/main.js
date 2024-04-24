@@ -7,6 +7,9 @@
 // }
 
 // Crear una lista de productos
+
+const prodPlan = [];
+
 const productos = [
     { nombre: "Ketchup Kraft 650 gr", formato: 2, tipo: "Ketchup", receta: 32, img: "./img/ketchup.jpg" },
     { nombre: "Ketchup Kraft 850 gr", formato: 2, tipo: "Ketchup", receta: 32, img: "./img/ketchup.jpg" },
@@ -42,22 +45,72 @@ const productos = [
 
 
 const contenedorProductos = document.querySelector("#productosTotales");
+const contenedorPlan = document.querySelector("#productosPlan");
 
-
-productos.forEach((producto)=>{
+productos.forEach((producto) => {
     const div = document.createElement("div");
     // div.classList.add();
-    div.innerHTML=`
+    div.innerHTML = `
     <img src="${producto.img}" alt="">
     <p>${producto.nombre}</p>
-    <p>formato: ${producto.formato}</p>
+    <p>Formato: ${producto.formato}</p>
     <p>Salsa: ${producto.tipo}</p>
     <p>Receta: ${producto.receta}</p>
-    <button>Planificar</button>
+   
     `;
+
+    const btn = document.createElement("button");
+    btn.classList.add("btnplan");
+    btn.innerText = "Planificar";
+    btn.addEventListener("click", () => {
+        agregarAlPlan(producto);
+    })
+
+    div.append(btn);
 
     contenedorProductos.append(div);
 })
+
+const agregarAlPlan = (producto) => {
+    const itemIngresado = prodPlan.find(item => item.nombre === producto.nombre);
+    if (!itemIngresado) {
+        prodPlan.push(producto);
+        actualizarPlan();
+    }
+}
+
+const borrarDelPlan = (producto) => {
+    const index = prodPlan.findIndex(item => item.nombre === producto.nombre);
+    if (index !== -1) {
+        prodPlan.splice(index, 1);
+        actualizarPlan(); // Llamar a esta función para actualizar la visualización del plan
+    }
+}
+
+const actualizarPlan = () => {
+    contenedorPlan.innerHTML = "";
+    prodPlan.forEach((producto) => {
+        const div = document.createElement("div");
+        div.innerHTML = `  
+        <img src="${producto.img}" alt="">
+        <p>${producto.nombre}</p>
+        <p>Formato: ${producto.formato}</p>
+        <p>Salsa: ${producto.tipo}</p>
+        <p>Receta: ${producto.receta}</p>   
+        `;
+
+        const btn = document.createElement("button");
+        btn.classList.add("btnplan");
+        btn.innerText = "borrar";
+        btn.addEventListener("click", () => {
+            borrarDelPlan(producto);
+        })
+
+        div.append(btn);
+
+        contenedorPlan.append(div);
+    })
+}
 
 
 
