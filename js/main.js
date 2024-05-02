@@ -37,6 +37,8 @@ const productos = [
 
 const contenedorProductos = document.querySelector("#productosTotales");
 const contenedorPlan = document.querySelector("#productosPlan");
+const btnBorrarLocalStorage = document.getElementById("BorrarLocalStorage");
+
 
 productos.forEach((producto) => {
     const div = document.createElement("div");
@@ -66,6 +68,8 @@ const agregarAlPlan = (producto) => {
     const itemIngresado = prodPlan.find(item => item.nombre === producto.nombre);
     if (!itemIngresado) {
         prodPlan.push(producto);
+        // Guardar en localStorage
+        localStorage.setItem('prodPlan', JSON.stringify(prodPlan));
         actualizarPlan();
     }
 }
@@ -118,13 +122,9 @@ const ordenarProductos = (producidos) => {
 const planificarProduccion = (primerProducto) => {
     const producidos = [];
     const productoInicial = prodPlan.find((item) => item.nombre === primerProducto);
-    if (!productoInicial) {
-        alert("El producto ingresado no está en la lista.");
-        return;
-    }
+
     producidos.push(productoInicial);
-    console.log("Primer producto: " + productoInicial.nombre);
-    
+
     // Ordenar el array de productos según la optimización solicitada
     const productosOrdenados = ordenarProductos(producidos);
 
@@ -148,13 +148,34 @@ const mostrarPlanificacion = (productos) => {
         <p>Receta: ${producto.receta}</p>   
         `;
 
-        contenedorPlanificacion.appendChild(div);
+        contenedorPlanificacion.append(div);
     });
 };
 
 
 
-const actualizarPlan = () => {
+// Verificar si hay productos en Local Storage al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    const productosAlmacenados = localStorage.getItem("prodPlan");
+    if (productosAlmacenados) {
+        // Si hay productos almacenados, cargarlos en prodPlan
+        prodPlan.push(...JSON.parse(productosAlmacenados));
+        // Mostrar los productos almacenados en la sección correspondiente
+        actualizarPlan();
+    }
+});
+
+btnBorrarLocalStorage.addEventListener("click", () => {
+    // Limpia Local Storage
+    localStorage.clear();
+    prodPlan.length = 0;
+    contenedorPlan.innerHTML = "";
+});
+
+
+
+// Función para actualizar la lista de productos planificados
+function actualizarPlan() {
     contenedorPlan.innerHTML = "";
     prodPlan.forEach((producto) => {
         const div = document.createElement("div");
@@ -171,10 +192,13 @@ const actualizarPlan = () => {
         btn.innerText = "borrar";
         btn.addEventListener("click", () => {
             borrarDelPlan(producto);
-        })
+        });
 
         div.append(btn);
 
         contenedorPlan.append(div);
-    })
+    });
+
+    // Guardar los productos planificados en el Local Storage
+    localStorage.setItem("prodPlan", JSON.stringify(prodPlan));
 }
