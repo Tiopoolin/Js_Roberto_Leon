@@ -165,14 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-btnBorrarLocalStorage.addEventListener("click", () => {
-    // Limpia Local Storage
-    localStorage.clear();
-    prodPlan.length = 0;
-    contenedorPlan.innerHTML = "";
-});
-
-
+// Resto del código...
 
 // Función para actualizar la lista de productos planificados
 function actualizarPlan() {

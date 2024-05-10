@@ -1,23 +1,24 @@
 .galeria {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     justify-items: center;
   }
   .galeria div {
   
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     /* margin: 2px 2  px 20px 5px; */
     overflow: hidden;
     border-style: solid;
     border-radius: 20px;
     border-width: 2px;
     border-color: #dee2e6;
-    width: 95%;
-    height: 95%;
+    width: 100%;
+ 
   }
 
   .galeria div p {
@@ -27,8 +28,8 @@
     font-size: small;
   }
   .galeria div img {
-    width: 50%;
-    height: 60%;
+    width: 50px;
+    height: 50px;
     transition: 0.9s;
     margin-top: 10px;
   }
