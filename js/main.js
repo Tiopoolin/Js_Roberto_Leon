@@ -40,7 +40,14 @@ const contenedorPlan = document.querySelector("#productosPlan");
 const btnBorrarLocalStorage = document.getElementById("BorrarLocalStorage");
 
 
-productos.forEach((producto) => {
+// Agregar evento de clic al botón
+btnBorrarLocalStorage.addEventListener("click", () => {
+    localStorage.clear();
+      prodPlan.length = 0; // Limpiar el array de productos planificados
+    contenedorPlan.innerHTML = ""; // Limpiar la interfaz
+});
+
+productos.forEach((producto) => {   
     const div = document.createElement("div");
     // div.classList.add();
     div.innerHTML = `
