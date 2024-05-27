@@ -1,0 +1,212 @@
+[
+    {
+        "nombre": "Ketchup Kraft 650 gr",
+        "formato": 2,
+        "tipo": "Ketchup",
+        "receta": 32,
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup Kraft 850 gr",
+        "formato": 2,
+        "tipo": "Ketchup",
+        "receta": 32,
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup Kraft 450 gr",
+        "formato": 1,
+        "tipo": "Ketchup",
+        "receta": 32,
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup Kraft 250 gr",
+        "formato": 1,
+        "tipo": "Ketchup",
+        "receta": 32,
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup Kraft 1000 gr",
+        "formato": 3,
+        "tipo": "Ketchup",
+        "receta": 32,
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup acuenta 650 gr",
+        "formato": 2,
+        "tipo": "Ketchup",
+        "receta": "acuenta",
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup acuenta 850 gr",
+        "formato": 2,
+        "tipo": "Ketchup",
+        "receta": "acuenta",
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup acuenta 450 gr",
+        "formato": 1,
+        "tipo": "Ketchup",
+        "receta": "acuenta",
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup acuenta 250 gr",
+        "formato": 1,
+        "tipo": "Ketchup",
+        "receta": "acuenta",
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup acuenta 1000 gr",
+        "formato": 3,
+        "tipo": "Ketchup",
+        "receta": "acuenta",
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup Don Juan 650 gr",
+        "formato": 2,
+        "tipo": "Ketchup",
+        "receta": 30.5,
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup Don Juan 850 gr",
+        "formato": 2,
+        "tipo": "Ketchup",
+        "receta": 30.5,
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup Don Juan 450 gr",
+        "formato": 1,
+        "tipo": "Ketchup",
+        "receta": 30.5,
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup Don Juan 250 gr",
+        "formato": 1,
+        "tipo": "Ketchup",
+        "receta": 30.5,
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Ketchup Don Juan 1000 gr",
+        "formato": 3,
+        "tipo": "Ketchup",
+        "receta": 30.5,
+        "img": "./img/ketchup.jpg"
+    },
+    {
+        "nombre": "Mayonesa Kraft 650 gr",
+        "formato": 2,
+        "tipo": "Mayonesa",
+        "receta": 15,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa Kraft 850 gr",
+        "formato": 2,
+        "tipo": "Mayonesa",
+        "receta": 15,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa Kraft 450 gr",
+        "formato": 1,
+        "tipo": "Mayonesa",
+        "receta": 15,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa Kraft 250 gr",
+        "formato": 1,
+        "tipo": "Mayonesa",
+        "receta": 15,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa Kraft 1000 gr",
+        "formato": 3,
+        "tipo": "Mayonesa",
+        "receta": 15,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa acuenta 650 gr",
+        "formato": 2,
+        "tipo": "Mayonesa",
+        "receta": 19,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa acuenta 850 gr",
+        "formato": 2,
+        "tipo": "Mayonesa",
+        "receta": 19,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa acuenta 450 gr",
+        "formato": 1,
+        "tipo": "Mayonesa",
+        "receta": 19,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa acuenta 250 gr",
+        "formato": 1,
+        "tipo": "Mayonesa",
+        "receta": 19,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa acuenta 1000 gr",
+        "formato": 3,
+        "tipo": "Mayonesa",
+        "receta": 19,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa Don Juan 650 gr",
+        "formato": 2,
+        "tipo": "Mayonesa",
+        "receta": 41,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa Don Juan 850 gr",
+        "formato": 2,
+        "tipo": "Mayonesa",
+        "receta": 41,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa Don Juan 450 gr",
+        "formato": 1,
+        "tipo": "Mayonesa",
+        "receta": 41,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa Don Juan 250 gr",
+        "formato": 1,
+        "tipo": "Mayonesa",
+        "receta": 41,
+        "img": "./img/mayonesa.webp"
+    },
+    {
+        "nombre": "Mayonesa Don Juan 1000 gr",
+        "formato": 3,
+        "tipo": "Mayonesa",
+        "receta": 41,
+        "img": "./img/mayonesa.webp"
+    }
+    ]
