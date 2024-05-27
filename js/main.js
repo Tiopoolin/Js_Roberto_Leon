@@ -7,7 +7,7 @@ const contenedorPlan = document.querySelector("#productosPlan");
 const contenedorPlanificacion = document.querySelector("#planificacion");
 const btnBorrarLocalStorage = document.getElementById("BorrarLocalStorage");
 
-fetch("https://github.com/Tiopoolin/Js_Roberto_Leon/blob/main/data/prod.json")
+fetch("/data/prod.json")
     .then(res => res.json())
     .then(data => {
         console.log(data);
