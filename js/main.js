@@ -7,7 +7,7 @@ const contenedorPlan = document.querySelector("#productosPlan");
 const contenedorPlanificacion = document.querySelector("#planificacion");
 const btnBorrarLocalStorage = document.getElementById("BorrarLocalStorage");
 
-fetch("C:/Users/rober/Desktop/coder_house/Javascript/prentrega2_Roberto_León/data/prod.json")
+fetch("data/prod.json")
     .then(res => res.json())
     .then(data => {
         console.log(data);
