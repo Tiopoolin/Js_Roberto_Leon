@@ -10,7 +10,6 @@ const btnBorrarLocalStorage = document.getElementById("BorrarLocalStorage");
 fetch("data/prod.json")
     .then(res => res.json())
     .then(data => {
-        console.log(data);
         productos = data;
         mostrarProductos();
 
